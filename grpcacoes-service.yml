@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: grpcacoes-service
+spec:
+  selector:
+    app: grpcacoes
+  ports:
+    - port: 80
+  type: LoadBalancer

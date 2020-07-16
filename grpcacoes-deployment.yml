@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: grpcacoes-deployment
+  labels:
+    app: grpcacoes
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: grpcacoes
+  template:
+    metadata:
+      labels:
+        app: grpcacoes
+    spec:
+      containers:
+      - name: grpcacoes
+        image: renatogroffe/grpc-acoes
+        env:
+          - name: ConnectionStrings__DBAcoesMongoDB
+            value: STRING CONEXÃO MONGODB
+        ports:
+        - containerPort: 80
